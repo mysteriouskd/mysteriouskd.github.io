@@ -1,1 +1,125 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Krishan.ml</title>
+<base href="https://kawiesh.eu.org"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@font-face{
+font-family: 'Black Chancery';
+font-style: normal;
+font-weight: normal;
+src: url('/resources/BlackChancery.woff') format('woff');
+}
+
+body{
+height: 100vh; width: 100vw;
+background: url(/resources/nightsky.png);
+background-size: cover;	
+}		
+
+div{
+color: white;
+text-shadow: 0 0 2px yellow;
+font: 30px "Black Chancery", "Courier New";
+font-size: 25px;
+position: absolute;
+left:50%; top:50%;
+transform: translate(-50%,-50%);
+white-space: pre;
+text-align:center;
+z-index:1;
+max-width: 98%;
+}
+
+a,a:visited{
+color: yellow;
+text-decoration: none;
+}
+
+svg{
+position: fixed;
+left:50%; top:50%;
+transform: translate(-50%,-50%);
+stroke-width: 1;
+stroke: red;
+fill: white;
+transition: 2.5s linear;
+width:0;
+height:0;
+opacity:0.1;
+z-index:0;
+}
+
+section{
+background: url("/resources/nightsky.png");		
+background-size: cover;		
+position: absolute;
+left:0%; top:0%;	
+right:0%; bottom:0%;	
+z-index:-1;
+transition: 5s linear;
+opacity:0;
+}
+
+.blink{
+animation: blink 3s linear infinite alternate;
+}
+
+@keyframes blink{
+0%{color: white}
+33%{color: blue}
+66%{color: pink}
+100%{color: limegreen}
+}
+
+</style>
+</head>
+<body>
+<!--
+<svg viewBox="0 0 32 32">
+<path d="M23.6 2c-3.363 0-6.258 2.736-7.599
+5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637
+0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906
+16.001 21.232 6.13-9.268 15.999-12.1
+15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z">
+</path>
+</svg>-->
+<div></div>
+<section></section>
+<script>
+//let svg= document.querySelector("svg");
+let section= document.querySelector("section");
+
+let a= `Hey there!
+this domain is
+reserved by
+@Kawiesh`;
+
+let b= document.querySelector("div");
+b.innerHTML="";
+let i=0;
+
+function xox(){
+if(i==a.length){
+//svg.style.stroke= "blue";
+//svg.style.opacity= 1;
+//section.style.opacity= 1;
+//svg.style.width= 2.5*(b.offsetWidth);
+//svg.style.height= 2.5*(b.offsetHeight);
+//b.classList.add("blink");
+b.innerHTML= b.innerHTML.replace(/@Kawiesh/,"<a href='https://twitter.com/Kawiesh'>@Kawiesh</a>");
+}
+
+if(i<a.length){
+b.innerHTML+= a[i];
+i++;
+setTimeout(xox,150);
+}
+}
+
+xox();
+document.title= location.hostname;
+</script>
+</body>
+</html>
