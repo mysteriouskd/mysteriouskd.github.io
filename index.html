@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Krishan.ml</title>
-<base href="https://kawiesh.eu.org"/>
+<title></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-@font-face{
-font-family: 'Black Chancery';
-font-style: normal;
-font-weight: normal;
-src: url('/resources/BlackChancery.woff') format('woff');
-}
+
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
 body{
+background: rgb(251,244,234) url(https://storage.googleapis.com/subtlepatterns-production/designers/subtlepatterns/uploads/papyrus.png);
 height: 100vh; width: 100vw;
-background: url(/resources/nightsky.png);
-background-size: cover;	
 }		
 
 div{
@@ -33,7 +27,7 @@ max-width: 98%;
 }
 
 a,a:visited{
-color: yellow;
+color: blue;
 text-decoration: none;
 }
 
@@ -88,26 +82,19 @@ animation: blink 3s linear infinite alternate;
 <div></div>
 <section></section>
 <script>
-//let svg= document.querySelector("svg");
-let section= document.querySelector("section");
+let c= location.hostname;
+document.title= c + " is reserved!";
 
 let a= `Hey there!
-this domain is
+${c} is
 reserved by
 @Kawiesh`;
 
 let b= document.querySelector("div");
-b.innerHTML="";
-let i=0;
+b.innerHTML=""; let i=0;
 
 function xox(){
 if(i==a.length){
-//svg.style.stroke= "blue";
-//svg.style.opacity= 1;
-//section.style.opacity= 1;
-//svg.style.width= 2.5*(b.offsetWidth);
-//svg.style.height= 2.5*(b.offsetHeight);
-//b.classList.add("blink");
 b.innerHTML= b.innerHTML.replace(/@Kawiesh/,"<a href='https://twitter.com/Kawiesh'>@Kawiesh</a>");
 }
 
@@ -119,7 +106,6 @@ setTimeout(xox,150);
 }
 
 xox();
-document.title= location.hostname;
 </script>
 </body>
 </html>
