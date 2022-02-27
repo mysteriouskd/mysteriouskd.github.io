@@ -8,7 +8,7 @@ fetch(url)
 .then(r=>r.json())
 .then(d=>{
 src= d.data[index]["submission_url"];
-});
+})
 .catch(x=> src="");
 
 document.write(`<b>${a}</b> leads to nothing but sadness.
