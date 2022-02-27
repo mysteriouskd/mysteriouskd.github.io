@@ -8,13 +8,12 @@ fetch(url)
 .then(r=>r.json())
 .then(d=>{
 src= d.data[index]["submission_url"];
-})
-.catch(x=> src="");
-
 document.write(`<b>${a}</b> leads to nothing but sadness.
 <br>But don't be disappointed, here's a meme:
 <img style="display: block; width: 90%; margin: 10px 5%"
 src="${src}"/>
 `);
+})
+.catch(x=> src="");
 
 </script>
