@@ -35,7 +35,7 @@ color: blue;
 <div></div>
 
 <script>		
-let message= `Hi there!,<br>
+let message= `Hi there!,
 ${location.hostname} is reserved by Kawiesh!`;
 
 let div= document.querySelector("div");
@@ -45,7 +45,7 @@ let i=0;
 function typeIt(){
 if(i==message.length){
 div.innerHTML= div.innerHTML
-.replace(/([^\s]+\.[^\s])/,"<b>$1</b>")
+.replace(/([^\s]+\.[^\s])/,"<br><b>$1</b>")
 .replace("Kawiesh","<a href='https://kawiesh.eu.org'>Kawiesh</a>");
 }
 if(i<message.length){
