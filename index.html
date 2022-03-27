@@ -1,67 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta name="robots" content="noindex, nofollow">
-<title></title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="theme-color" content="black"/>
+<meta name="msapplication-TileColor" content="#da532c"/>
+<meta name="msapplication-navbutton-color" content="black"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
-
 body{
-background: rgb(251,244,234) url(https://storage.googleapis.com/subtlepatterns-production/designers/subtlepatterns/uploads/papyrus.png);
-min-height: 100vh; min-width: 100vw;
+font: bold 30px Courier;
+max-width: 100vw;
+background: url(https://storage.googleapis.com/subtlepatterns-production/designers/subtlepatterns/uploads/45degreee_fabric.png);
 }		
 
+b{
+color: red;
+}
+
 div{
-color: black;
-text-shadow: 0 0 2px black;
-font: 30px "Handlee", "Courier New";
-font-size: 25px;
-position: absolute;
-left:50%; top:50%;
-transform: translate(-50%,-50%);
-white-space: pre;
-text-align:center;
-z-index:1;
-max-width: 98%;
+margin-top: 30px;
 }
 
-a,a:visited{
+a:visited{
 color: blue;
-text-decoration: none;
 }
-
 
 </style>
 </head>
 <body>
+
 <div></div>
-<script>
-let c= location.hostname;
-document.title= c + " is reserved!";
 
-let a= `Hey there!
-${c} is
-reserved by
-@Kawiesh`;
+<script>		
+let message= `Hi there!,<br>
+${location.hostname} is reserved by Kawiesh!`;
 
-let b= document.querySelector("div");
-b.innerHTML=""; let i=0;
+let div= document.querySelector("div");
+div.innerHTML="";
 
-function xox(){
-if(i==a.length){
-b.innerHTML= b.innerHTML.replace(/@Kawiesh/,"<a href='https://twitter.com/Kawiesh'>@Kawiesh</a>");
+let i=0;
+function typeIt(){
+if(i==message.length){
+div.innerHTML= div.innerHTML
+.replace(/([^\s]+\.[^\s])/,"<b>$1</b>")
+.replace("Kawiesh","<a href='https://kawiesh.eu.org'>Kawiesh</a>");
 }
-
-if(i<a.length){
-b.innerHTML+= a[i];
+if(i<message.length){
+div.innerHTML+= message[i];
 i++;
-setTimeout(xox,150);
+setTimeout(typeIt,150);
 }
 }
 
-xox();
-</script>
+typeIt();
+document.title= `${location.hostname} - Kawiesh`;
+				
+</script>				
 </body>
 </html>
