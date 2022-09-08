@@ -46,11 +46,13 @@ align-items: center;
 
 
 .body{
+overflow: hidden;
 background: rgb(0,0,0);
 }
 
 .container{
 height: 100%;
+width: 100vw;
 border: 0px solid darkgray;
 }
 /******************************************************/
@@ -86,13 +88,8 @@ from{left: -100px}
 to{left: calc(100vw + 50px)}
 }
 /******************************************************/
-@media (orientation:portrait){
-.container{width: 95%;}
-}
 
-@media (orientation:landscape){
-.container{width: 50%;}
-}
+
 </style>
 </head>
 <body class="body flexcolumn">
